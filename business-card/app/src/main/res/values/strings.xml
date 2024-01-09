@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Business Card</string>
+    <string name="fullName">Gabriel Rodrigues</string>
+    <string name="tittle">Estagiario</string>
+    <string name="cellphoneNumber">+55 (21)97911-4326</string>
+    <string name="socialMedia">https://github.com/Gabriel-Rodrigues13</string>
+    <string name="email">rodrigues.gabriel1307@gmail.com</string>
+    <string name="descriptionLogo">android logo</string>
+    <string name="descriptionPhoneNumber">phone number</string>
+    <string name="descriptionShare">share</string>
+    <string name="descriptionEmail">email</string>
+</resources>
