@@ -15,19 +15,11 @@
  */
 package com.example.lunchtray
 
-<<<<<<< HEAD
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.lunchtray.ui.OrderViewModel
 
 // TODO: Screen enum
 
 // TODO: AppBar
-=======
+
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -47,7 +39,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -96,42 +87,41 @@ fun LunchTrayAppTopBar(
     )
 
 }
->>>>>>> lunch-tray
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LunchTrayApp() {
-<<<<<<< HEAD
+
     // TODO: Create Controller and initialization
 
-=======
+
     // TODO: Create Controller and initialization (x)
     val navController: NavHostController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen = LunchTrayScreen.valueOf(
         backStackEntry?.destination?.route ?: LunchTrayScreen.START.name
     )
->>>>>>> lunch-tray
+
     // Create ViewModel
     val viewModel: OrderViewModel = viewModel()
 
     Scaffold(
         topBar = {
-<<<<<<< HEAD
+
             // TODO: AppBar
-=======
+
             LunchTrayAppTopBar(
                 currentScreenTitle = currentScreen.title,
-                canNavigateBack = navController.previousBackStackEntry != null ,
-                navigateUp = { navController.navigateUp()})
->>>>>>> lunch-tray
+                canNavigateBack = navController.previousBackStackEntry != null,
+                navigateUp = { navController.navigateUp() })
+
         }
     ) { innerPadding ->
         val uiState by viewModel.uiState.collectAsState()
 
         // TODO: Navigation host
-<<<<<<< HEAD
-=======
+
 
         NavHost(
             navController = navController,
@@ -206,6 +196,6 @@ fun LunchTrayApp() {
                 )
             }
         }
->>>>>>> lunch-tray
+
     }
 }
