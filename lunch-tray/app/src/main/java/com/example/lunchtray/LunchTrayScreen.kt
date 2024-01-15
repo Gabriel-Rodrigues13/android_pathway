@@ -30,6 +30,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.lunchtray.datasource.DataSource
 import com.example.lunchtray.ui.AccompanimentMenuScreen
@@ -51,11 +52,13 @@ enum class LunchTrayScreen() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LunchTrayApp(
-    navController: NavHostController = rememberNavController()
-) {
+fun LunchTrayApp() {
     // TODO: Create Controller and initialization
-
+    val navController: NavHostController = rememberNavController()
+    val backStackEntry by navController.currentBackStackEntryAsState()
+    val currentScreen = LunchTrayScreen.valueOf(
+        backStackEntry?.destination?.route ?: LunchTrayScreen.START.name
+    )
     // Create ViewModel
     val viewModel: OrderViewModel = viewModel()
 
